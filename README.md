@@ -2,7 +2,7 @@
 <img src="/assets/logo2.png" alt="llama2 code interprerter icon" style="width: 200px; height:200px; display: block; margin: auto; border-radius: 50%;">
 </p>
 
-# Llama2 Code Interpreter
+# Llama2 Code Assistant
 
 This project allows LLM to generate code, execute it, receive feedback, debug, and answer questions based on the whole process. It is designed to be intuitive and versatile, capable of dealing with multiple languages and frameworks.
 
