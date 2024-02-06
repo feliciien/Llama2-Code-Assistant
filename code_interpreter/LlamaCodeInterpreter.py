@@ -1,5 +1,6 @@
 import sys
 import os
+import secrets
 
 prj_root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(prj_root_path)
@@ -253,7 +254,6 @@ class LlamaCodeInterpreter(BaseCodeInterpreter):
 
 
 if __name__ == "__main__":
-    import random
 
     LLAMA2_MODEL_PATH = "./ckpt/llama-2-13b-chat"
     LLAMA2_MODEL_PATH = "meta-llama/Llama-2-70b-chat-hf"
@@ -263,8 +263,7 @@ if __name__ == "__main__":
         model_path=LLAMA2_FINETUNEED_PATH, load_in_4bit=True
     )
     output = interpreter.chat(
-        user_message=random.choice(
-            [
+        user_message=secrets.SystemRandom().choice([
                 # "In a circle with center \( O \), \( AB \) is a chord such that the midpoint of \( AB \) is \( M \). A tangent at \( A \) intersects the extended segment \( OB \) at \( P \). If \( AM = 12 \) cm and \( MB = 12 \) cm, find the length of \( AP \)."
                 # "A triangle \( ABC \) is inscribed in a circle (circumscribed). The sides \( AB \), \( BC \), and \( AC \) are tangent to the circle at points \( P \), \( Q \), and \( R \) respectively. If \( AP = 10 \) cm, \( BQ = 15 \) cm, and \( CR = 20 \) cm, find the radius of the circle.",
                 # "Given an integer array nums, return the total number of contiguous subarrays that have a sum equal to 0.",
